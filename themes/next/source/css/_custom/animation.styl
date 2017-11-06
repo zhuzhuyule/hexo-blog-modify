@@ -1,0 +1,55 @@
+
+@keyframes changeBorderColor {
+  0% ,100%{
+    border-color: #00a0ff;
+  }
+  33.3% {
+    border-color: #FFEE58;
+  }
+  66.3% {
+    border-color: #ff703b;
+  }
+}
+
+@keyframes changeBKColor {
+  0%,100% {
+    background: #00a0ff
+  }
+  33.3% {
+    background: #FFEE58;
+  }
+  66.3% {
+    background: #ff703b;
+  }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes move {
+  25% {
+    opacity: 1;
+
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(7px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateX(11px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(18px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+@keyframes showAuthor {
+    0% { max-width: 0; width: 0; height: 0; }    
+    100% { max-width: $site-author-image-width; width: $site-author-image-width; height: $site-author-image-height; }
+}

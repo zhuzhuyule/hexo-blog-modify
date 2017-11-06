@@ -1,0 +1,163 @@
+.post-button .container {
+  position: absolute;
+  display: inline-block;
+  margin: 8px -2px;
+  min-height: 0;
+}
+
+.chevron {
+  position: absolute;
+  width: 3px;
+  height: .9em;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  height: 51%;
+  width: 100%;
+  background: #B3B3B3;
+}
+
+.chevron:before {
+  top: 0;
+  transform: skew(30deg, 0deg);
+}
+
+.chevron:after {
+  bottom: 0;
+  transform: skew(-30deg, 0deg);
+}
+
+$btnAnimateTime = 0.2s;
+$btnAnimateTimeDelay = 0.4s;
+.post-button {
+  a {
+    border: 0px;
+  }
+  a.btn {
+    position: relative;
+  }
+  .post-button {
+    padding: 10px;
+  }
+  .post-button {
+    padding: 10px;
+  }
+  .post-button a {
+    border: 0px;
+  }
+  a.btn {
+    position: relative;
+  }
+  a.btn::after,
+  a.btn::before {
+    content: "";
+    position: absolute;
+    padding: 0;
+    left: 0;
+    margin-left: -0.4em;
+    height: 0px;
+    border: 2px solid #566473;
+    transition: all $btnAnimateTime ease;
+    border-radius: 1px;
+  }
+  a.btn::before {
+    top: 0px;
+    border-width: 0 2px;
+    width: calc(100% + 0.8em - 4px);
+    transition: height $btnAnimateTime ease;
+  }
+  a.btn:hover:before {
+    height: 95%;
+    transition: height $btnAnimateTime ease $btnAnimateTime;
+  }
+  a.btn::after {
+    bottom: 0px;
+    border-width: 0 0 2px 0;
+    width: calc(100% + 0.8em);
+    transition: height $btnAnimateTime cubic-bezier(0.450, -0.585, 0.750, 0.750) $btnAnimateTime, border 0.1s ease $btnAnimateTimeDelay;
+  }
+  a.btn:hover:after {
+    height: 85%;
+    border-width: 2px 0;
+    transition: height $btnAnimateTime cubic-bezier(0.250, 0.250, 0.160, 1.650);
+  }
+}
+
+$btnBorderWidth = 1px;
+a.popup-trigger,
+a[rel="section"] {
+  position: relative;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 0em;
+    height: 0px;
+    width: 0px;
+    // border: 0px none #566473;
+     border: 0px solid #566473;
+    transition: all 0.4s ease;
+    opacity: 0;
+  }
+  &::before {
+    top: 12px;
+    left: 20px;
+    //box-shadow: -2px -2px 2px 0px gray;
+  }
+  &:hover:before {
+    top: 0px;
+    left: 0px;
+    height: 12px;
+    width: 20px;
+    border-width: $btnBorderWidth 0 0 $btnBorderWidth;
+    opacity: .6;
+  }
+  &::after {
+    bottom: 12px;
+    right: 20px;
+    //box-shadow: 2px 2px 2px 0px gray;
+  }
+  &:hover:after {
+    bottom: 0px;
+    right: 0px;
+    height: 12px;
+    width: 20px;
+    border-width: 0 $btnBorderWidth $btnBorderWidth 0;
+    opacity: .5;
+  }
+}
+
+.codePinBtn{
+  flex: 0 0 auto;
+  opacity: 0;
+  z-index: 1000;
+  margin-left: -23px;
+  align-self: start;
+}
+
+#copyBtn {
+  opacity: 0;
+  position: fixed;
+  display: block;
+  z-index: 1000;
+  line-height: 1;
+  font-size: 1.5em;
+  left: 18px;
+}

@@ -1,0 +1,249 @@
+// Custom styles.
+body {
+  background: #ffffff;
+  +mobile() {
+    padding-left: 0 !important;
+  }
+  +tablet() {
+    padding-left: 0 !important;
+  }
+  overflow-x: hidden;
+}
+
+ul,
+menu,
+dir {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  /*-webkit-padding-start: 0px;*/
+}
+
+p {
+  margin: 0 0 0 0;
+}
+
+p+p {
+  margin: 1em 0 0 0;
+}
+
+.main{
+  padding-bottom: 150px;
+}
+
+.main-inner{
+  position: relative;
+}
+
+/*ul ul,*/
+.post ul {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+ul>li>ul>li {
+  list-style-type: disc !important;
+}
+
+ol {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+//时钟
+.customFlipClock {
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+//头像边框
+.site-author-image {
+  border: none;
+}
+
+//引用
+blockquote {
+  background-color: $BKblockquote;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+.header-inner {
+  // transition: padding 2s;
+  padding: 80px 0 80px;
+}
+
+.footer{
+  left: 0;
+  bottom: 0;
+}
+
+.posts-expand .post {
+  margin-top: 50px;
+}
+
+.posts-expand .post-title-link {
+  line-height: 1em;
+  &::before {
+    bottom: -3px;
+  }
+}
+
+.posts-collapse .collection-title {
+  margin: 2em 0;
+}
+
+.posts-expand .post {
+  padding-bottom: 1em;
+  border-bottom-color: #E1E1E1;
+  border-bottom-style: dashed;
+  border-bottom-width: 0.15em;
+}
+
+.posts-collapse .post {
+  line-height: 1;
+  margin: 0;
+}
+
+.page-post-detail .post-title {
+  padding-left: 0;
+}
+
+.page-post-detail .post-title {
+  background-color: #B9D3EE;
+  border-radius: 0.3em;
+  line-height: 1em;
+  padding-bottom: 0.12em;
+  padding-top: 0.12em;
+  box-shadow: 2px 2px 7px #9fb6cd;
+  &::before {
+    content: "";
+    padding: 0;
+  }
+}
+
+.post-block.page .post-title {
+  background: none;
+  box-shadow: none;
+  text-align: left;
+}
+
+.page-post-detail .post-body {
+  //padding-bottom: 5em;
+  //position: relative;
+  &::after {
+    content: "— The End —";
+    color: #e0e0e0;
+    text-align: center;
+    width: 100%;
+    line-height: 60px;
+    display: block;
+    //position: absolute;
+    font-family: Monotype Corsiva, Blackadder ITC, Brush Script MT, Bradley Hand ITC, Bell MT;
+    font-size: 1.6em;
+    padding-bottom: .6em;
+  }
+}
+
+.post-copyright {
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+  border: 1px dashed #fc6423;
+  background-color: $BKblockquote;
+  list-style: none;
+}
+
+.post-copyright .tip {
+  padding-left: 5.2em;
+  margin-top: -2em;
+  display: list-item;
+}
+
+.post-sticky-flag {
+  font-size: .4em;
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  margin-top: -1.4em;
+  vertical-align: middle;
+  background-color: #037DBE;
+  color: #EFEFEF;
+  border-radius: 0.4em;
+  padding: 0.1em 0.2em;
+}
+
+#reward {
+  font-size: 1.2em;
+  background-color: #FAF2C7;
+  color: black;
+  width: 100% !important;
+  //box-shadow: 1px 4px 3px rgb(214, 214, 214);
+}
+
+.wobbleTransparentBK{
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.wobbleTransparentLine{
+  border-color: rgba(0,0,0,0) !important;
+}
+
+canvas::selection {
+    background: rgba(0,0,0,0);
+    color: rgba(0,0,0,0);
+}
+
+#rewardButton {
+  background-color: inherit;
+}
+
+.post-button .btn:hover{
+  opacity: .25;
+  animation: pulse 1s linear alternate infinite;
+}
+
+.content-wrap a:hover{
+  opacity: .45;
+  animation: pulse 1s linear alternate infinite;
+}
+
+#sidebar canvas{
+    display: block;
+    position: absolute;
+    opacity: 0;
+}
+
+.dailyTitle div {
+    display: block;
+    margin-top: -.5em;
+    margin-left: .5em;
+    padding: 0 .1em;
+    box-shadow: 0 0px 3px 1px gray;
+    background-color: #64B5F6;
+    float: left;
+}
+.dailyContent{
+    margin: 2em 0 0;
+    padding: .5em 1em;
+  	padding-top: 1em;
+    border: 1px dashed #fc6423;
+    background-color: #f1f1f1;
+    list-style: none;
+}
+
+
+@import animation;
+@import highlight;
+@import flipclock;
+@import sidebar;
+@import scrollbar;
+//tags class
+@import oneline;
+@import label;
+@import h;
+@import quotelist;
+@import button;
+@import codescroll;

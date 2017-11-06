@@ -1,0 +1,195 @@
+@require "../_common/components/highlight/theme"
+@require "../_common/components/highlight/diff"
+
+.highlight figcaption {
+  font-size: 1.2em;
+  line-height: 1.8em;
+  padding: 0 .5em;
+  color: $highlight-figcaptionFont;
+  background-color: $highlight-figcaptionBK;
+  margin-bottom: 0;
+  .fileDir{
+    color: #bbb;
+  }
+  .caption{
+    font-weight: 700;
+  }
+  .suffix{
+    color: #bbb;
+  }
+}
+
+pre {
+  @extend $code-block;
+  background: $BKblockquote;
+  code {
+    padding: 0;
+    color: $grey-dim;
+    background: none;
+    text-shadow: none;
+  }
+}
+
+figure {
+  transition: margin-right;
+  /*box-shadow: 6px 6px 12px 0px #9FB6CD;*/
+}
+
+blockquote .highlight{
+  border: 1px solid $highlight-gutter.bg-color;
+  margin-bottom : 0px;
+}
+
+.highlight {
+  .line{
+    display: flex;
+  }
+}
+
+.highlight {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 4px;
+  td.gutter
+  {
+    display: block;
+    position: relative;
+  }
+  td.code {
+    width: 100%;
+    .line:hover {
+      background-color: $highlight-selection!important;
+      margin: 0 -5px 0 -10px;
+      padding: 0 5px 0 10px;
+    }
+  }
+  .line.marked {
+    //border-bottom: 1px solid #666;
+    //border-bottom-style: dashed;
+    //margin: 0 -5px 0 -10px;
+    //padding: 0 5px 0 10px;
+    //margin-top: -1px !important;
+    background-color: #E8EAF6;
+    &:before{
+      content: ">";
+      margin-left: -8px;
+      color: white;
+    }
+
+  }
+}
+
+pre {
+  padding: 0.4em;
+  .comment {
+    font-style: italic;
+  }
+  .keyword {
+    font-weight: 700;
+  }
+}
+
+
+figure pre {
+  font-size: 1em;
+}
+
+li>figure:first-child {
+  margin-top: 0 !important;
+}
+
+p+figure {
+  margin-top: 0 !important;
+}
+
+//Code 背景显示
+code {
+  color: $highlight-emphasisFont; //强调字体
+  background: $highlight-emphasisBK; //强调背景
+  border: 1px solid #BBB;
+  padding: .1em.4em;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-size: 0.96em;
+  border-radius: $code-border-radius;
+  //font-size $code-font-size;
+  vertical-align: bottom;
+  word-wrap: break-word;
+}
+
+pre code {
+  border: 0px solid #d1d1d1;
+}
+
+td.gutter {
+    border-right: 2px solid #AED581;
+}
+//高亮语法补充
+pre {
+  .attr {
+    color: $highlight-purple;
+  }
+}
+
+.figcode {
+    margin: 0;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+
+    display: flex;
+    overflow: hidden;
+}
+
+.figcode>.gutter{
+    flex: none;
+    border-right: 2px solid #AED581;
+    text-align: right;
+    background-color: $highlight-gutter.bg-color;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.figcode>.code{
+    flex: 1;
+    border: none;
+    margin: 0;
+    overflow-x:auto;
+    display:flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    .line:hover {
+      background-color: $highlight-selection!important;
+      // margin: 0 -5px 0 -10px;
+      // padding: 0 5px 0 10px;
+    }
+}
+
+.highlight .gutter pre
+.highlight .code pre{
+  padding-left: 0;
+  padding-right: 0;
+  overflow: visible;
+}
+
+.figcode .code pre{
+    flex: 0 0 100%;
+    padding-right: 10px;
+    width: auto;
+}
+
+.highlight .line{
+  display:block;
+  margin: 0 0 0 -10px;
+  padding: 0 0 0 10px;
+}
+
+@media (max-width: 767px) {
+  .post-body {
+    .highlight {
+      padding:  0px;
+      .gutter pre {
+        padding-right: 0px;
+      }
+    }
+  }
+}

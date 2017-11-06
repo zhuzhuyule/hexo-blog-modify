@@ -1,0 +1,66 @@
+
+.custom-logo-site-title,
+.site-author-image {  
+  margin: 0 auto;  
+	position: relative;
+	overflow: hidden;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	text-align: center
+}
+
+.site-author-image {
+  /* 头像圆形 */
+  padding: 0;
+  border-radius: 5em;
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+  border: 3px solid #00a0ff;
+  display: table;
+  overflow: visible; 
+  transition: all 1.0s;    
+	animation: changeBorderColor 60s infinite linear;  
+  // animation: showAuthor 1.5s cubic-bezier(0.645, 1.470, 0.695, 0.905);//cubic-bezier(0.84, 0.04, 0.19, 1.02) forwards;
+}
+
+.custom-logo-site-title/*,
+.site-author-image img */{
+	-moz-animation-duration: .4s;
+	-ms-animation-duration: .4s;
+	animation-duration: .4s;
+	-moz-animation-delay: .3s;
+	-ms-animation-delay: .3s;
+	animation-delay: .3s;
+	-webkit-animation-duration: .4s;
+	-webkit-animation-delay: .3s
+}
+
+.custom-logo-site-title:hover {
+	-moz-animation: play-shake .15s linear infinite alternate;
+	-ms-animation: play-shake .15s linear infinite alternate;
+	animation: play-shake .15s linear infinite alternate;
+	-webkit-animation: play-shake .15s linear infinite alternate
+}
+
+.site-author-image:hover {
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); 	/* IE 9 */
+    -moz-transform:rotate(180deg); 	/* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg); 	/* Opera */
+}
+
+@keyframes play-shake {
+	0% {
+		right: 4px;
+		top: 1x
+	}
+
+	100% {
+		right: 0;
+		top: -1px
+	}
+}
+
