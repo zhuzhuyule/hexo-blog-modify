@@ -1,7 +1,6 @@
 # hexo-blog-modify
-this is my blog (zhuzhuyule.xyz)  Node root dir !
 
-My [Site](http://zhuzhuyule.xyz) is power by hexo, and use the [hexo-theme-next](https://github.com/iissnan/hexo-theme-next) !
+My blog [zhuzhuyule.xyz](http://zhuzhuyule.xyz) is power by hexo, and use the [hexo-theme-next](https://github.com/iissnan/hexo-theme-next) !
 
 I just modify this theme to i like.
 
