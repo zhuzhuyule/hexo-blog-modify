@@ -2,7 +2,7 @@
 
 My blog [zhuzhuyule.xyz](http://zhuzhuyule.xyz) is power by hexo, and use the [hexo-theme-next](https://github.com/iissnan/hexo-theme-next) !
 
-I just modify this theme to i like.
+The theme is briefer, and I just want to modify it to fit me more !  
 
 # modify info:
 - code highlight (main)
