@@ -314,7 +314,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics: a4fca83a02606e577b84c170d98a7afe
+#baidu_analytics: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Disqus
 #disqus_shortname:
@@ -342,10 +342,6 @@ valine:
   verify: false # Verification code
   placeholder: Comment input placeholder
 
-# Support for youyan comments system.
-# You can get your uid from http://www.uyan.cc
-#youyan_uid: your uid
-
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
 #livere_uid: your uid
@@ -372,14 +368,6 @@ valine:
 
 # Google Analytics
 #google_analytics:
-
-# Bing Webmaster tools verification setting
-# See: https://www.bing.com/webmaster/
-#bing_site_verification:
-
-# Yandex Webmaster tools verification setting
-# See: https://webmaster.yandex.ru/
-#yandex_site_verification:
 
 # CNZZ count
 #cnzz_siteid:
