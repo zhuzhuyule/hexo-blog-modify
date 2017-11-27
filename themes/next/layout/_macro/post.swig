@@ -176,6 +176,26 @@
                   <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentsCount" ></span>
                 </a>
               {% endif %}
+            {% elseif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            {% elseif theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+                </a>
+              </span>
             {% endif %}
           {% endif %}
 
@@ -275,7 +295,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="{{ url_for(post.path) }}">
-              {{ __('post.read_more') }} 
+              {{ __('post.read_more') }}
             </a>
             <div class="container">
               <div class="chevron"></div>
@@ -289,7 +309,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#{{ __('post.more') }}{% endif %}" rel="contents">
-              {{ __('post.read_more') }} 
+              {{ __('post.read_more') }}
             </a>
             <div class="container">
               <div class="chevron"></div>
@@ -305,7 +325,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#{{ __('post.more') }}{% endif %}" rel="contents">
-              {{ __('post.read_more') }} 
+              {{ __('post.read_more') }}
             </a>
             <div class="container">
               <div class="chevron"></div>
@@ -330,14 +350,14 @@
     {#####################}
 
     {% include '../_custom/post-content-after.swig'  with { post: post } %}
-    
+
      {% if theme.post_copyright.enable and not is_index %}
       <div>
         {% include 'post-copyright.swig' with { post: post } %}
       </div>
     {% endif %}
-    
-    
+
+
     {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>
         {% include 'wechat-subscriber.swig' %}
@@ -350,8 +370,6 @@
       </div>
     {% endif %}
 
-   
-
     <footer class="post-footer">
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
@@ -362,7 +380,7 @@
       {% endif %}
 
       {% if not is_index %}
-      {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
+      {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
         <div class="post-widgets">
         {% if theme.rating.enable %}
           <div class="wp_rating">
@@ -383,6 +401,17 @@
                 <div class="fb-like" data-layout="button_count" data-share="true"></div>
               </div>
             {% endif %}
+          </div>
+        {% endif %}
+
+        {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
+          {% if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
+            <span class="post-meta-divider">|</span>
+          {% endif %}
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         {% endif %}
         </div>

@@ -264,8 +264,28 @@ function createCopyBtns() {
 
     var clipboard = new Clipboard('#copyBtn', {
       target: function () {
-        return document.querySelector("[copyFlag]");
-
+        var node =  document.querySelector("[copyFlag]");
+        var child = node.querySelector(".diff-deletion");
+        if (child != null ){
+          var pre = node.querySelector("pre").cloneNode(true);
+          child = pre.querySelector(".diff-deletion");
+          while ( child != null ){
+            pre.removeChild(child)
+            child = pre.querySelector(".diff-deletion");
+          }
+          var node = document.getElementById('tmpcopy');
+          if (node == null){
+            node = document.createElement('div');
+            node.id = 'tmpcopy';
+            node.style.position = 'fixed';
+            node.style.width = '0';
+            node.style.height = '0';
+            document.body.appendChild(node);
+          }
+          node.innerHTML = '';
+          node.appendChild(pre);
+        }
+        return  node;
       },
       isSupported: function () {
         alert(this.support);
@@ -277,6 +297,8 @@ function createCopyBtns() {
       function (e) {
         e.clearSelection();
         changeToSuccess(e);
+        var node = document.getElementById("tmpcopy");
+        if (node != null) node.innerHTML = '';
       });
 
     clipboard.on('error',

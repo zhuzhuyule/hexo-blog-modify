@@ -1,5 +1,7 @@
 $highlight_theme = hexo-config("highlight_theme")
 
+$highlight-diffdeletion = #c7ffd7
+$highlight-diffaddition = #ffd3d8
 
 if $highlight_theme == "normal"
   $highlight-background   = #f7f7f7
@@ -108,9 +110,12 @@ if $highlight_theme == "custom"
   $highlight-aqua         = #66cccc
   $highlight-blue         = #cc99cc
   $highlight-purple       = #7BAAFF
+  $highlight-diffdeletion = #c7ffd7
+  $highlight-diffaddition = #ffd3d8
   $highlight-gutter       = {
     color: $highlight-green,
-    bg-color: darken($highlight-background, 20%)
+    bg-color: darken($highlight-background, 20%),
+    right-border-color: #a3a3a3
   }
 
 if $highlight_theme == "custom light"
@@ -123,15 +128,18 @@ if $highlight_theme == "custom light"
   $highlight-current-line = #efefef
   $highlight-selection    = #d6d6d6
   $highlight-foreground   = #4d4d4c
-  $highlight-comment      = #2AB919
+  $highlight-comment      = #6eb55e
   $highlight-red          = #c82829
   $highlight-orange       = #f5871f
   $highlight-yellow       = #eab700
   $highlight-green        = #718c00
   $highlight-aqua         = #3e999f
   $highlight-blue         = #4271ae
-  $highlight-purple       = #0000ff
+  $highlight-purple       = #1212a0
+  $highlight-diffdeletion = #c7ffd7
+  $highlight-diffaddition = #ffd3d8
   $highlight-gutter       = {
     color: #5c5c5c,
-    bg-color: #e7e5dc
+    bg-color: #e7e5dc,
+    right-border-color: #aed581
   }
